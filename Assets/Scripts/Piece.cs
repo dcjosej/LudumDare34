@@ -55,7 +55,7 @@ public class Piece : MonoBehaviour {
 
     void OnDrawGizmosSelected()
     {
-        if (anchors.Length > 0)
+        if (anchors != null && anchors.Length > 0)
         {
             for (int i = 0; i < anchors.Length; i++)
             {
