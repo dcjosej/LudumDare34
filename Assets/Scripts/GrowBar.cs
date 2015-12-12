@@ -8,22 +8,35 @@ public class GrowBar : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	
+		growBar = GetComponent<Slider>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
+		if (GameManager.instance.debug)
+		{
+			UpdateKeyboardDebug();
+		}
 	}
 
-	public void Increase(int amount)
+	public void Increase(float amount)
 	{
 		growBar.value += amount;
 
 		if(growBar.value >= 1)
 		{
 			GameManager.instance.InstantiatePiece();
+			growBar.value = 0;
 		}
     }
+
+	/*=========== DEBUG =======================*/
+	public void UpdateKeyboardDebug()
+	{
+		if (Input.GetKeyDown(KeyCode.Space))
+		{
+			Increase(0.4f);
+		}
+	}
 
 }

@@ -17,6 +17,10 @@ public class GameManager : MonoBehaviour {
 		}
 	}
 
+
+	public bool debug = true;
+
+
 	// Use this for initialization
 	void Start () {
 	
@@ -29,6 +33,6 @@ public class GameManager : MonoBehaviour {
 
 	public void InstantiatePiece()
 	{
-		throw new System.NotImplementedException();
+		print("Instantiate pieceeeeeee!!! La vihen");
 	}
 }
