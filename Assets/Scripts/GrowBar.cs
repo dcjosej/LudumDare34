@@ -22,7 +22,7 @@ public class GrowBar : MonoBehaviour {
 
 		if(growBar.value >= 1)
 		{
-			GameManager.instance.InstantiatePiece();
+			//GameManager.instance.InstantiatePiece();
 		}
     }
 
