@@ -3,13 +3,14 @@ using System.Collections.Generic;
 
 public class Abomination : MonoBehaviour {
 
-    List<Anchor> freeAnchors;
+    public List<Anchor> freeAnchors;
     public Piece basePiece;
     public GameObject[] availablePieces;
 
     void Awake()
     {
         freeAnchors = new List<Anchor>(basePiece.anchors);
+        GameManager.instance.abomination = this;
     }
 
     [ContextMenu("Create Piece")]

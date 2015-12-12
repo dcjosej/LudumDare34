@@ -284,6 +284,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3cf81256794e1d44091c8d7ef7a68ad3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  freeAnchors: []
   basePiece: {fileID: 11421554}
   availablePieces:
   - {fileID: 120354, guid: 09301c5497210be4b9bb029a5d063e25, type: 2}
