@@ -4,27 +4,27 @@ using System.Collections.Generic;
 public class Piece : MonoBehaviour {
 
     public bool isLeaf;
-    public Transform[] anchors = new Transform[0];
-    public Transform pivot;
+    public Anchor[] anchors = new Anchor[0];
+    public Anchor pivot;
 
     void Reset()
     {
-        anchors = FindAnchors();
+        anchors = GetComponentsInChildren<Anchor>();
     }
 
     void Awake()
     {
-        anchors = FindAnchors();
+        anchors = GetComponentsInChildren<Anchor>();
     }
 
-	public void Attach(Transform t)
+	public void Attach(Anchor anchor)
     {
 
-        pivot = t;
-        transform.SetParent(t);
+        pivot = anchor;
+        transform.SetParent(anchor.transform);
         transform.localPosition = Vector3.zero;
-
-        Piece p = t.gameObject.GetComponentInParent<Piece>();
+        //Eliminar el anchor pivot de abiertos
+        Piece p = anchor.gameObject.GetComponentInParent<Piece>();
         p.isLeaf = false;
 
         if (anchors.Length > 0)
@@ -36,28 +36,21 @@ public class Piece : MonoBehaviour {
     public void Detach()
     {
         Piece p = pivot.GetComponentInParent<Piece>();
-        //Añadir pivot
         p.isLeaf = p.CheckIfIsLeaf();
-        Destroy(this.gameObject);
+        //Añadir el anchor pivot a abiertos
+        Destroy(gameObject);
     }
 
     public bool CheckIfIsLeaf()
     {
-        //Usar cuando se detache
-        return false;
-    }
-
-    Transform[] FindAnchors()
-    {
-        List<Transform> anchors = new List<Transform>();
-        foreach (Transform t in this.transform)
+        foreach (Anchor anchor in anchors)
         {
-            if (t.tag == "Anchor")
+            if (!anchor.itsFree)
             {
-                anchors.Add(t);
+                return false;
             }
         }
-        return anchors.ToArray();
+        return true;
     }
 
     void OnDrawGizmosSelected()
