@@ -29,8 +29,8 @@ public class Piece : MonoBehaviour {
 
         if (anchors.Length > 0)
         {
-            //Añadir nuevos anchors a abiertos
-        }
+			GameManager.instance.abomination.freeAnchors.AddRange(anchors);
+		}
     }
 
     public void Detach()

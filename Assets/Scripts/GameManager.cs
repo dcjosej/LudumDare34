@@ -17,6 +17,19 @@ public class GameManager : MonoBehaviour {
 		}
 	}
 
+	public Abomination abomination;
+
+
+	void Awake()
+	{
+		abomination = FindObjectOfType<Abomination>();
+	}
+
+
+
+	public bool debug = true;
+
+
 	// Use this for initialization
 	void Start () {
 	
@@ -29,6 +42,6 @@ public class GameManager : MonoBehaviour {
 
 	public void InstantiatePiece()
 	{
-		throw new System.NotImplementedException();
+		print("Instantiate pieceeeeeee!!! La vihen");
 	}
 }
