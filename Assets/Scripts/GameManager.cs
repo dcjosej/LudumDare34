@@ -17,6 +17,15 @@ public class GameManager : MonoBehaviour {
 		}
 	}
 
+	public Abomination abomination;
+
+
+	void Awake()
+	{
+		abomination = FindObjectOfType<Abomination>();
+	}
+
+
 
 	public bool debug = true;
 

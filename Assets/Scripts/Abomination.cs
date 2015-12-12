@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 public class Abomination : MonoBehaviour {
 
-    List<Anchor> freeAnchors;
+    public List<Anchor> freeAnchors { get; set; }
     Piece basePiece;
     
     void Awake()

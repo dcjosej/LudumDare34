@@ -25,9 +25,8 @@ public class GrowBar : MonoBehaviour {
 
 		if(growBar.value >= 1)
 		{
-			GameManager.instance.InstantiatePiece();
+			GameManager.instance.abomination.CreateRandomPiece();
 			growBar.value = 0;
-			//GameManager.instance.InstantiatePiece();
 		}
     }
 
