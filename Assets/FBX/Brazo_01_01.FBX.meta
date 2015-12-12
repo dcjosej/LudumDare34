@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 3fd47d32b657c664285de1d0826464a2
-timeCreated: 1449932690
+guid: 74005107a9db8d6499e14365b8b8b908
+timeCreated: 1449937222
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
@@ -9,8 +9,7 @@ ModelImporter:
     400000: //RootNode
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Plane001
-    4300002: Torso_01_01
+    4300000: Brazo_01_01
   materials:
     importMaterials: 1
     materialName: 0
