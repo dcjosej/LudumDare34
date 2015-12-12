@@ -23,7 +23,7 @@ public class Piece : MonoBehaviour {
         pivot = anchor;
         transform.SetParent(anchor.transform);
         transform.localPosition = Vector3.zero;
-        //Eliminar el anchor pivot de abiertos
+        GameManager.instance.abomination.freeAnchors.Remove(pivot);
         Piece p = anchor.gameObject.GetComponentInParent<Piece>();
         p.isLeaf = false;
 

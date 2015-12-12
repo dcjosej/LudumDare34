@@ -17,31 +17,21 @@ public class GameManager : MonoBehaviour {
 		}
 	}
 
-	public Abomination abomination;
-
-
-	void Awake()
-	{
-		abomination = FindObjectOfType<Abomination>();
-	}
-
+    public GameObject abominationPrefab;
+    
+	public Abomination abomination { get; set; }
 
 
 	public bool debug = true;
 
+    void Start()
+    {
+        InstantiateAbomination();
+    }
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
 
-	public void InstantiatePiece()
+	public void InstantiateAbomination()
 	{
-		print("Instantiate pieceeeeeee!!! La vihen");
+        abomination = (Instantiate(abominationPrefab) as GameObject).GetComponent<Abomination>();
 	}
 }
