@@ -27,6 +27,7 @@ public class GrowBar : MonoBehaviour {
 		{
 			GameManager.instance.InstantiatePiece();
 			growBar.value = 0;
+			//GameManager.instance.InstantiatePiece();
 		}
     }
 
